@@ -1,14 +1,4 @@
 
- const Bibliotheque = {
-    livres: [],
-    utilisateurs: [],
-    emprunts: [],
-    prochainIdLivre: 1,
-    prochainIdUtilisateur: 1,
-    prochainIdEmprunt: 1,
-    stockLivre : 0
-};
-
 const utilisateurs = [];
 
 function ajouterUtilisateur(nom, email, telephone){
@@ -49,4 +39,19 @@ function ajouterUtilisateur(nom, email, telephone){
     // localStorage.setItem('utilisateurs', utilisateurs);
     message('Utilisateur ajouté avec succès', true);
 }
+
+function ajouterUtilisateurViaFormulaire (event) {
+    event.preventDefault();
+
+}
+
+
+function ouvrirModalAjoutUtilisateur() {
+    document.getElementById('modal-utilisateur').classList.remove('hidden');
+}
+
+function fermerModalUtilisateur(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+}
+
 

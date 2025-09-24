@@ -230,6 +230,8 @@
         </section>
     </main>
 
+
+
     <!-- Modals -->
     <!-- Modal Ajout Livre -->
     <div id="modal-livre" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
@@ -264,10 +266,40 @@
     </div>
 
 
+    <!-- Modal Ajout Utilisateur -->
+     
+    <div id="modal-utilisateur" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md ">
+            <h3 class="text-xl font-bold mb-4">Ajouter un Utilisateur</h3>
+            <form id="form-utilisateur" onsubmit="ajouterUtilisateurViaFormulaire(event)">
+                <div class="space-y-4">
+                    <input type="text" id="nom-utilisateur" placeholder="Nom" required
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+        
+                    <input type="text" id="email-utilisateur" placeholder="email" required
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+
+                    <input type="text" id="telephone-utilisateur" placeholder="Telephone : +33 00 " required
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+
+                </div>
+                <div class="flex justify-end space-x-3 mt-6">
+                    <button type="button" onclick="fermerModalUtilisateur('modal-utilisateur')"
+                        class="px-4 py-2 text-gray-600 hover:text-gray-800">
+                        Annuler
+                    </button>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Ajouter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <!-- script-->
     <script src="../scripts/bookController.js"></script>
-    <!-- <script src="../scripts/userController.js"></script> -->
+    <script src="../scripts/userController.js"></script>
     <script src="../scripts/view.js"></script>
 </body>
 
