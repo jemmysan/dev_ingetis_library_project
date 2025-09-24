@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliothèque Universelle</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../scripts/bookController.js"></script>
-    <script src="../scripts/userController.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../scripts/view.js"></script>
+
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-blue-600 text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
             <div class="flex justify-between items-center">
                 <h1 class="text-3xl font-bold">
-                    <i class="fas fa-book mr-2"></i>Bibliothèque 
+                    <i class="fas fa-book mr-2"></i>Bibliothèque
                 </h1>
                 <nav class="flex space-x-4">
-                    <button onclick="afficherSection('dashboard')" class="nav-btn bg-blue-700 px-4 py-2 rounded-lg transition hover:bg-blue-800">
+                    <button onclick="afficherSection('dashboard')"
+                        class="nav-btn bg-blue-700 px-4 py-2 rounded-lg transition hover:bg-blue-800">
                         <i class="fas fa-home mr-2"></i>Dashboard
                     </button>
-                    <button onclick="afficherSection('livres')" class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
+                    <button onclick="afficherSection('livres')"
+                        class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
                         <i class="fas fa-book mr-2"></i>Livres
                     </button>
-                    <button onclick="afficherSection('utilisateurs')" class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
+                    <button onclick="afficherSection('utilisateurs')"
+                        class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
                         <i class="fas fa-users mr-2"></i>Utilisateurs
                     </button>
-                    <button onclick="afficherSection('emprunts')" class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
+                    <button onclick="afficherSection('emprunts')"
+                        class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
                         <i class="fas fa-exchange-alt mr-2"></i>Emprunts
                     </button>
-                    <button onclick="afficherSection('statistiques')" class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
+                    <button onclick="afficherSection('statistiques')"
+                        class="nav-btn px-4 py-2 rounded-lg transition hover:bg-blue-700">
                         <i class="fas fa-chart-bar mr-2"></i>Statistiques
                     </button>
                 </nav>
@@ -45,7 +49,7 @@
 
     <!-- Contenu principal -->
     <main class="container mx-auto px-4 py-8">
-        
+
         <!-- Section Dashboard -->
         <section id="dashboard" class="section active">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -61,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <div class="flex items-center">
                         <div class="p-3 bg-green-100 rounded-full">
@@ -73,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <div class="flex items-center">
                         <div class="p-3 bg-orange-100 rounded-full">
@@ -89,16 +93,20 @@
 
             <!-- Actions rapides -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <button onclick="afficherSection('livres'); ouvrirModalAjoutLivre()" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition">
+                <button onclick="afficherSection('livres'); ouvrirModalAjoutLivre()"
+                    class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition">
                     <i class="fas fa-plus mr-2"></i>Ajouter Livre
                 </button>
-                <button onclick="afficherSection('utilisateurs'); ouvrirModalAjoutUtilisateur()" class="bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition">
+                <button onclick="afficherSection('utilisateurs'); ouvrirModalAjoutUtilisateur()"
+                    class="bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition">
                     <i class="fas fa-user-plus mr-2"></i>Nouvel Utilisateur
                 </button>
-                <button onclick="afficherSection('emprunts'); ouvrirModalEmprunt()" class="bg-purple-500 text-white p-4 rounded-lg hover:bg-purple-600 transition">
+                <button onclick="afficherSection('emprunts'); ouvrirModalEmprunt()"
+                    class="bg-purple-500 text-white p-4 rounded-lg hover:bg-purple-600 transition">
                     <i class="fas fa-hand-holding mr-2"></i>Nouvel Emprunt
                 </button>
-                <button onclick="genererRapport()" class="bg-red-500 text-white p-4 rounded-lg hover:bg-red-600 transition">
+                <button onclick="genererRapport()"
+                    class="bg-red-500 text-white p-4 rounded-lg hover:bg-red-600 transition">
                     <i class="fas fa-file-pdf mr-2"></i>Générer Rapport
                 </button>
             </div>
@@ -116,7 +124,8 @@
         <section id="livres" class="section hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Gestion des Livres</h2>
-                <button onclick="ouvrirModalAjoutLivre()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                <button onclick="ouvrirModalAjoutLivre()"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
                     <i class="fas fa-plus mr-2"></i>Ajouter un Livre
                 </button>
             </div>
@@ -124,13 +133,14 @@
             <!-- Barre de recherche -->
             <div class="bg-white p-4 rounded-lg shadow-md mb-6">
                 <div class="flex flex-col md:flex-row gap-4">
-                    <input type="text" id="recherche-livre" placeholder="Rechercher par titre, auteur, genre..." 
-                           class="flex-1 p-3 border border-gray-300 rounded-lg">
+                    <input type="text" id="recherche-livre" placeholder="Rechercher par titre, auteur, genre..."
+                        class="flex-1 p-3 border border-gray-300 rounded-lg">
                     <select id="filtre-genre" class="p-3 border border-gray-300 rounded-lg">
                         <option value="">Tous les genres</option>
                         <!-- Options générées dynamiquement -->
                     </select>
-                    <button onclick="rechercherLivres()" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                    <button onclick="rechercherLivres()"
+                        class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
                         <i class="fas fa-search mr-2"></i>Rechercher
                     </button>
                 </div>
@@ -146,7 +156,8 @@
         <section id="utilisateurs" class="section hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Gestion des Utilisateurs</h2>
-                <button onclick="ouvrirModalAjoutUtilisateur()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                <button onclick="ouvrirModalAjoutUtilisateur()"
+                    class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
                     <i class="fas fa-user-plus mr-2"></i>Nouvel Utilisateur
                 </button>
             </div>
@@ -173,20 +184,24 @@
         <section id="emprunts" class="section hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Gestion des Emprunts</h2>
-                <button onclick="ouvrirModalEmprunt()" class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">
+                <button onclick="ouvrirModalEmprunt()"
+                    class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">
                     <i class="fas fa-hand-holding mr-2"></i>Nouvel Emprunt
                 </button>
             </div>
 
             <!-- Onglets -->
             <div class="flex border-b mb-6">
-                <button onclick="afficherOngletEmprunts('actifs')" class="onglet-emprunt px-4 py-2 font-medium border-b-2 border-blue-500 text-blue-600">
+                <button onclick="afficherOngletEmprunts('actifs')"
+                    class="onglet-emprunt px-4 py-2 font-medium border-b-2 border-blue-500 text-blue-600">
                     Emprunts Actifs
                 </button>
-                <button onclick="afficherOngletEmprunts('retards')" class="onglet-emprunt px-4 py-2 font-medium text-gray-500 hover:text-gray-700">
+                <button onclick="afficherOngletEmprunts('retards')"
+                    class="onglet-emprunt px-4 py-2 font-medium text-gray-500 hover:text-gray-700">
                     Retards
                 </button>
-                <button onclick="afficherOngletEmprunts('historique')" class="onglet-emprunt px-4 py-2 font-medium text-gray-500 hover:text-gray-700">
+                <button onclick="afficherOngletEmprunts('historique')"
+                    class="onglet-emprunt px-4 py-2 font-medium text-gray-500 hover:text-gray-700">
                     Historique
                 </button>
             </div>
@@ -199,14 +214,14 @@
         <!-- Section Statistiques -->
         <section id="statistiques" class="section hidden">
             <h2 class="text-2xl font-bold mb-6">Statistiques et Rapports</h2>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Graphiques et statistiques -->
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-4">Livres les plus populaires</h3>
                     <div id="graphique-popularite"></div>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-4">Répartition par genre</h3>
                     <div id="graphique-genres"></div>
@@ -222,19 +237,22 @@
             <h3 class="text-xl font-bold mb-4">Ajouter un Livre</h3>
             <form id="form-livre" onsubmit="ajouterLivreViaFormulaire(event)">
                 <div class="space-y-4">
-                    <input type="text" id="titre-livre" placeholder="Titre" required 
-                           class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="text" id="titre-livre" placeholder="Titre" required
+                        class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="text" id="auteur-livre" placeholder="Auteur" required
-                           class="w-full p-3 border border-gray-300 rounded-lg">
+                        class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="text" id="isbn-livre" placeholder="ISBN (XXX-X-XX-XXXXXX-X)" required
-                           class="w-full p-3 border border-gray-300 rounded-lg">
+                        class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="number" id="annee-livre" placeholder="Année" required
-                           class="w-full p-3 border border-gray-300 rounded-lg">
+                        class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="text" id="genre-livre" placeholder="Genre" required
-                           class="w-full p-3 border border-gray-300 rounded-lg">
+                        class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="number" id="quantite-livre" placeholder="Quantité" required
+                        class="w-[30%] p-3 border border-gray-300 rounded-lg">
                 </div>
                 <div class="flex justify-end space-x-3 mt-6">
-                    <button type="button" onclick="fermerModal('modal-livre')" class="px-4 py-2 text-gray-600 hover:text-gray-800">
+                    <button type="button" onclick="fermerModal('modal-livre')"
+                        class="px-4 py-2 text-gray-600 hover:text-gray-800">
                         Annuler
                     </button>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
@@ -245,5 +263,12 @@
         </div>
     </div>
 
+
+
+    <!-- script-->
+    <script src="../scripts/bookController.js"></script>
+    <!-- <script src="../scripts/userController.js"></script> -->
+    <script src="../scripts/view.js"></script>
 </body>
+
 </html>

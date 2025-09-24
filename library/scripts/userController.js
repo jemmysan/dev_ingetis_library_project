@@ -1,3 +1,14 @@
+
+ const Bibliotheque = {
+    livres: [],
+    utilisateurs: [],
+    emprunts: [],
+    prochainIdLivre: 1,
+    prochainIdUtilisateur: 1,
+    prochainIdEmprunt: 1,
+    stockLivre : 0
+};
+
 const utilisateurs = [];
 
 function ajouterUtilisateur(nom, email, telephone){
@@ -34,8 +45,8 @@ function ajouterUtilisateur(nom, email, telephone){
     }
 
     utilisateurs.push(nouvelUtilisateur);
-    bibliotheque.prochainIdUtilisateur++
-    localStorage.setItem('utilisateurs', utilisateurs);
+    Bibliotheque.prochainIdUtilisateur++
+    // localStorage.setItem('utilisateurs', utilisateurs);
     message('Utilisateur ajouté avec succès', true);
 }
 

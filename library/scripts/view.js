@@ -1,5 +1,12 @@
-
-
+// const Bibliotheque = {
+//     livres: [],
+//     utilisateurs: [],
+//     emprunts: [],
+//     prochainIdLivre: 1,
+//     prochainIdUtilisateur: 1,
+//     prochainIdEmprunt: 1,
+//     stockLivre : 0
+// };
 // Fonctions d'affichage
 function afficherSection(sectionId) {
     // Cacher toutes les sections
@@ -24,32 +31,19 @@ function afficherSection(sectionId) {
     }
 }
 
-function ouvrirModalAjoutLivre() {
-    document.getElementById('modal-livre').classList.remove('hidden');
-}
 
-function fermerModal(modalId) {
-    document.getElementById(modalId).classList.add('hidden');
-}
 
-// Fonctions de gestion (à compléter avec votre logique)
-function ajouterLivreViaFormulaire(event) {
-    event.preventDefault();
-    // Récupérer les valeurs du formulaire et appeler ajouterLivre()
-    console.log("Ajout de livre via formulaire");
-    fermerModal('modal-livre');
-}
 
-function mettreAJourDashboard() {
-    document.getElementById('total-livres').textContent = bibliotheque.livres.length;
-    document.getElementById('total-utilisateurs').textContent = bibliotheque.utilisateurs.length;
-    document.getElementById('total-emprunts').textContent = bibliotheque.emprunts.filter(e => !e.dateRetour).length;
-}
+// function mettreAJourDashboard() {
+//     document.getElementById('total-livres').textContent = Bibliotheque.livres.length;
+//     document.getElementById('total-utilisateurs').textContent = Bibliotheque.utilisateurs.length;
+//     document.getElementById('total-emprunts').textContent = Bibliotheque.emprunts.filter(e => !e.dateRetour).length;
+// }
 
 // Initialisation
-document.addEventListener('DOMContentLoaded', function () {
-    mettreAJourDashboard();
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     mettreAJourDashboard();
+// });
 
 
 
